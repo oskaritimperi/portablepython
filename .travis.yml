@@ -1,5 +1,5 @@
 os: windows
-language: c
+language: generic
 env:
   - PYVERSION=3.5.1 PYARCH=amd64
   - PYVERSION=3.5.1 PYARCH=x86
