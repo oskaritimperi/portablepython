@@ -24,11 +24,9 @@ Write-Output "Target: $target"
 Write-Output "Target dir: $targetdir"
 Write-Output "Log file: $logfile"
 
-# $client = New-Object System.Net.WebClient
-# $client.DownloadFile($url, $target)
+$client = New-Object System.Net.WebClient
+$client.DownloadFile($url, $target)
 
-# ((Get-Content -path unattend.xml.in -raw) -replace 'TARGET_DIR',$targetdir) | Set-Content -path unattend.xml
-
-# & "$target" /quiet /log "$logfile"
+((Get-Content -path unattend.xml.in -raw) -replace 'TARGET_DIR',$targetdir) | Set-Content -path unattend.xml
 
 Start-Process -FilePath "$target" -ArgumentList "/quiet","/log","$logfile" -Wait
