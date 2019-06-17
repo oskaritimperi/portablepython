@@ -3,4 +3,4 @@ language: c
 env:
   - PYVERSION=3.5.1 PYARCH=64
   - PYVERSION=3.5.1 PYARCH=32
-script: download.sh
+script: ./download.sh
