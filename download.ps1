@@ -6,17 +6,15 @@
 # https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe
 # https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe.asc
 
-if ($env:PYARCH -eq "amd64") {
+if ($env:PYARCH -eq "64") {
     $filename = "python-${env:PYVERSION}-amd64.exe"
-    $arch = "64"
 } else {
     $filename = "python-${env:PYVERSION}.exe"
-    $arch = "32"
 }
 
 $url = "https://www.python.org/ftp/python/${env:PYVERSION}/${filename}"
 $target = $PSScriptRoot + "\" + $filename
-$targetdir = $PSScriptRoot + "\Python-${env:PYVERSION}-${arch}"
+$targetdir = $PSScriptRoot + "\Python-${env:PYVERSION}-${env:PYARCH}"
 $logfile = $PSScriptRoot + "\install.log"
 
 Write-Output "URL: $url"
