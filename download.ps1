@@ -27,4 +27,10 @@ $client.DownloadFile($url, $target)
 
 ((Get-Content -path unattend.xml.in -raw) -replace 'TARGET_DIR',$targetdir) | Set-Content -path unattend.xml
 
+if (Test-Path env:CI) {
+    Remove-Item -Force -Recurse HKCU:\Software\Python
+    Remove-Item -Force -Recurse HKLM:\Software\Python
+    Remove-Item -Force -Recurse HKLM:\Software\Wow6432Node\Python
+}
+
 Start-Process -FilePath "$target" -ArgumentList "/quiet","/log","$logfile" -Wait
