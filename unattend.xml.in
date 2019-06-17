@@ -1,0 +1,9 @@
+<Options>
+    <Option Name="InstallAllUsers" Value="0" />
+    <Option Name="TargetDir" Value="TARGET_DIR" />
+    <Option Name="AssociateFiles" Value="0" />
+    <Option Name="Shortcuts" Value="0" />
+    <Option Name="Include_launcher" Value="0" />
+    <Option Name="InstallLauncherAllUsers" Value="0" />
+    <Option Name="Include_test" Value="0" />
+</Options>
