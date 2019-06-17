@@ -1,6 +1,6 @@
 os: windows
-language: generic
+language: c
 env:
-  - PYVERSION=3.5.1 PYARCH=amd64
-  - PYVERSION=3.5.1 PYARCH=x86
+  - PYVERSION=3.5.1 PYARCH=64
+  - PYVERSION=3.5.1 PYARCH=32
 script: download.sh
