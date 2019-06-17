@@ -3,4 +3,4 @@ language: generic
 env:
   - PYVERSION=3.5.1 PYARCH=amd64
   - PYVERSION=3.5.1 PYARCH=x86
-script: powershell '.\download.ps1'
+script: download.sh
