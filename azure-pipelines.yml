@@ -4,6 +4,16 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
-steps:
-- powershell: .\download.ps1
-  displayName: 'Run the build'
+jobs:
+- job: build
+  steps:
+  - powershell: .\download.ps1
+    displayName: 'Run the build'
+  strategy:
+    matrix:
+      PY351_32:
+        PYVERSION: 3.5.1
+        PYARCH: 32
+      PY351_64:
+        PYVERSION: 3.5.1
+        PYARCH: 64
