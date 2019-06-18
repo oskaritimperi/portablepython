@@ -1,0 +1,9 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- powershell: .\download.ps1
+  displayName: 'Run the build'
