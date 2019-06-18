@@ -12,7 +12,19 @@ strategy:
     PY351_64:
       PYVERSION: 3.5.1
       PYARCH: 64
-
+    PY354_32:
+      PYVERSION: 3.5.4
+      PYARCH: 32
+    PY354_64:
+      PYVERSION: 3.5.4
+      PYARCH: 64
+    PY373_32:
+      PYVERSION: 3.7.3
+      PYARCH: 32
+    PY373_64:
+      PYVERSION: 3.7.3
+      PYARCH: 64
+      
 steps:
 - powershell: .\download.ps1
   displayName: 'Run the build'
