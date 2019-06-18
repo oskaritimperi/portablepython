@@ -16,3 +16,14 @@ strategy:
 steps:
 - powershell: .\download.ps1
   displayName: 'Run the build'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: 'Python-$(PYVERSION)-$(PYARCH)'
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
