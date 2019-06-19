@@ -151,3 +151,8 @@ steps:
   inputs:
     pathtoPublish: 'install.log'
     artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
+
+- task: GithubRelease@0
+  inputs:
+    githubConnection: 'oswjk'
+    assets: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
