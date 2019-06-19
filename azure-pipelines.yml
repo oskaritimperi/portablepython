@@ -24,7 +24,7 @@ strategy:
     PY373_64:
       PYVERSION: 3.7.3
       PYARCH: 64
-      
+
 steps:
 - powershell: .\download.ps1
   displayName: 'Run the build'
@@ -39,3 +39,8 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: drop
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: 'install.log'
+    artifactName: 'install.log'
