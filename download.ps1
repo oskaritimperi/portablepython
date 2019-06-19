@@ -21,3 +21,6 @@ $client.DownloadFile($url, $target)
 ((Get-Content -path unattend.xml.in -raw) -replace 'TARGET_DIR',$targetdir) | Set-Content -path unattend.xml
 
 Start-Process -FilePath "$target" -ArgumentList "/quiet","/log","$logfile" -Wait
+
+# Remove all __pycache__ directories
+Get-ChildItem -Include __pycache__ -Recurse -Force | Remove-Item -Force -Recurse
