@@ -38,9 +38,9 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: drop
+    artifactName: '$(PYVERSION)-$(PYARCH)'
 
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: 'install.log'
-    artifactName: 'install.log'
+    artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
