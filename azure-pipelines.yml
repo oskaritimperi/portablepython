@@ -154,5 +154,5 @@ steps:
 
 - task: GithubRelease@0
   inputs:
-    githubConnection: 'oswjk'
+    githubConnection: 'oswjkpat'
     assets: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
