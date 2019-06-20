@@ -42,7 +42,11 @@ jobs:
     vmImage: 'vs2017-win2016'
   steps:
   - task: DownloadPipelineArtifact@1
-  - powershell: ls
+
+  - task: GithubRelease@0
+    inputs:
+      githubConnection: 'oswjkpat'
+      assets: '$(System.ArtifactsDirectory)/**/*.zip'
 
 
 
