@@ -13,6 +13,125 @@ jobs:
         PYVERSION: 3.5.0
         PYARCH: 64
 
+      PY351_32:
+        PYVERSION: 3.5.1
+        PYARCH: 32
+      PY351_64:
+        PYVERSION: 3.5.1
+        PYARCH: 64
+
+      PY352_32:
+        PYVERSION: 3.5.2
+        PYARCH: 32
+      PY352_64:
+        PYVERSION: 3.5.2
+        PYARCH: 64
+
+      PY353_32:
+        PYVERSION: 3.5.3
+        PYARCH: 32
+      PY353_64:
+        PYVERSION: 3.5.3
+        PYARCH: 64
+
+      PY354_32:
+        PYVERSION: 3.5.4
+        PYARCH: 32
+      PY354_64:
+        PYVERSION: 3.5.4
+        PYARCH: 64
+
+      PY360_32:
+        PYVERSION: 3.6.0
+        PYARCH: 32
+      PY360_64:
+        PYVERSION: 3.6.0
+        PYARCH: 64
+
+      PY361_32:
+        PYVERSION: 3.6.1
+        PYARCH: 32
+      PY361_64:
+        PYVERSION: 3.6.1
+        PYARCH: 64
+
+      PY362_32:
+        PYVERSION: 3.6.2
+        PYARCH: 32
+      PY362_64:
+        PYVERSION: 3.6.2
+        PYARCH: 64
+
+      PY363_32:
+        PYVERSION: 3.6.3
+        PYARCH: 32
+      PY363_64:
+        PYVERSION: 3.6.3
+        PYARCH: 64
+
+      PY364_32:
+        PYVERSION: 3.6.4
+        PYARCH: 32
+      PY364_64:
+        PYVERSION: 3.6.4
+        PYARCH: 64
+
+      PY365_32:
+        PYVERSION: 3.6.5
+        PYARCH: 32
+      PY365_64:
+        PYVERSION: 3.6.5
+        PYARCH: 64
+
+      PY366_32:
+        PYVERSION: 3.6.6
+        PYARCH: 32
+      PY366_64:
+        PYVERSION: 3.6.6
+        PYARCH: 64
+
+      PY367_32:
+        PYVERSION: 3.6.7
+        PYARCH: 32
+      PY367_64:
+        PYVERSION: 3.6.7
+        PYARCH: 64
+
+      PY368_32:
+        PYVERSION: 3.6.8
+        PYARCH: 32
+      PY368_64:
+        PYVERSION: 3.6.8
+        PYARCH: 64
+
+      PY370_32:
+        PYVERSION: 3.7.0
+        PYARCH: 32
+      PY370_64:
+        PYVERSION: 3.7.0
+        PYARCH: 64
+
+      PY371_32:
+        PYVERSION: 3.7.1
+        PYARCH: 32
+      PY371_64:
+        PYVERSION: 3.7.1
+        PYARCH: 64
+
+      PY372_32:
+        PYVERSION: 3.7.2
+        PYARCH: 32
+      PY372_64:
+        PYVERSION: 3.7.2
+        PYARCH: 64
+
+      PY373_32:
+        PYVERSION: 3.7.3
+        PYARCH: 32
+      PY373_64:
+        PYVERSION: 3.7.3
+        PYARCH: 64
+
   pool:
     vmImage: 'vs2017-win2016'
 
@@ -47,161 +166,3 @@ jobs:
     inputs:
       githubConnection: 'oswjkpat'
       assets: '$(System.ArtifactsDirectory)/**/*.zip'
-
-
-
-# pool:
-#   vmImage: 'vs2017-win2016'
-
-# strategy:
-#   matrix:
-#     PY350_32:
-#       PYVERSION: 3.5.0
-#       PYARCH: 32
-#     PY350_64:
-#       PYVERSION: 3.5.0
-#       PYARCH: 64
-
-#     PY351_32:
-#       PYVERSION: 3.5.1
-#       PYARCH: 32
-#     PY351_64:
-#       PYVERSION: 3.5.1
-#       PYARCH: 64
-
-#     PY352_32:
-#       PYVERSION: 3.5.2
-#       PYARCH: 32
-#     PY352_64:
-#       PYVERSION: 3.5.2
-#       PYARCH: 64
-
-#     PY353_32:
-#       PYVERSION: 3.5.3
-#       PYARCH: 32
-#     PY353_64:
-#       PYVERSION: 3.5.3
-#       PYARCH: 64
-
-#     PY354_32:
-#       PYVERSION: 3.5.4
-#       PYARCH: 32
-#     PY354_64:
-#       PYVERSION: 3.5.4
-#       PYARCH: 64
-
-#     PY360_32:
-#       PYVERSION: 3.6.0
-#       PYARCH: 32
-#     PY360_64:
-#       PYVERSION: 3.6.0
-#       PYARCH: 64
-
-#     PY361_32:
-#       PYVERSION: 3.6.1
-#       PYARCH: 32
-#     PY361_64:
-#       PYVERSION: 3.6.1
-#       PYARCH: 64
-
-#     PY362_32:
-#       PYVERSION: 3.6.2
-#       PYARCH: 32
-#     PY362_64:
-#       PYVERSION: 3.6.2
-#       PYARCH: 64
-
-#     PY363_32:
-#       PYVERSION: 3.6.3
-#       PYARCH: 32
-#     PY363_64:
-#       PYVERSION: 3.6.3
-#       PYARCH: 64
-
-#     PY364_32:
-#       PYVERSION: 3.6.4
-#       PYARCH: 32
-#     PY364_64:
-#       PYVERSION: 3.6.4
-#       PYARCH: 64
-
-#     PY365_32:
-#       PYVERSION: 3.6.5
-#       PYARCH: 32
-#     PY365_64:
-#       PYVERSION: 3.6.5
-#       PYARCH: 64
-
-#     PY366_32:
-#       PYVERSION: 3.6.6
-#       PYARCH: 32
-#     PY366_64:
-#       PYVERSION: 3.6.6
-#       PYARCH: 64
-
-#     PY367_32:
-#       PYVERSION: 3.6.7
-#       PYARCH: 32
-#     PY367_64:
-#       PYVERSION: 3.6.7
-#       PYARCH: 64
-
-#     PY368_32:
-#       PYVERSION: 3.6.8
-#       PYARCH: 32
-#     PY368_64:
-#       PYVERSION: 3.6.8
-#       PYARCH: 64
-
-#     PY370_32:
-#       PYVERSION: 3.7.0
-#       PYARCH: 32
-#     PY370_64:
-#       PYVERSION: 3.7.0
-#       PYARCH: 64
-
-#     PY371_32:
-#       PYVERSION: 3.7.1
-#       PYARCH: 32
-#     PY371_64:
-#       PYVERSION: 3.7.1
-#       PYARCH: 64
-
-#     PY372_32:
-#       PYVERSION: 3.7.2
-#       PYARCH: 32
-#     PY372_64:
-#       PYVERSION: 3.7.2
-#       PYARCH: 64
-
-#     PY373_32:
-#       PYVERSION: 3.7.3
-#       PYARCH: 32
-#     PY373_64:
-#       PYVERSION: 3.7.3
-#       PYARCH: 64
-
-# steps:
-# - powershell: .\download.ps1
-#   displayName: 'Run the build'
-
-# - task: ArchiveFiles@2
-#   inputs:
-#     rootFolderOrFile: 'Python-$(PYVERSION)-$(PYARCH)'
-#     archiveType: 'zip'
-#     archiveFile: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     artifactName: '$(PYVERSION)-$(PYARCH)'
-
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     pathtoPublish: 'install.log'
-#     artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
-
-# # - task: GithubRelease@0
-# #   inputs:
-# #     githubConnection: 'oswjkpat'
-# #     assets: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
