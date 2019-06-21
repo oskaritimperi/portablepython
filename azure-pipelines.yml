@@ -132,6 +132,13 @@ jobs:
         PYVERSION: 3.7.3
         PYARCH: 64
 
+      PY2716_32:
+        PYVERSION: 2.7.16
+        PYARCH: 32
+      PY2716_64:
+        PYVERSION: 2.7.16
+        PYARCH: 64
+
   pool:
     vmImage: 'vs2017-win2016'
 
