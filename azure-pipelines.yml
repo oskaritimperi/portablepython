@@ -143,6 +143,11 @@ jobs:
   - powershell: .\download.ps1
     displayName: 'Run the build'
 
+  - task: PublishPipelineArtifact@0
+    inputs:
+      targetPath: 'install.log'
+      artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
+
   - task: ArchiveFiles@2
     inputs:
       rootFolderOrFile: 'Python-$(PYVERSION)-$(PYARCH)'
@@ -153,11 +158,6 @@ jobs:
     inputs:
       targetPath: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
       artifactName: '$(PYVERSION)-$(PYARCH)'
-
-  - task: PublishPipelineArtifact@0
-    inputs:
-      targetPath: 'install.log'
-      artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
 
 - job: release
   dependsOn: build
