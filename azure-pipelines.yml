@@ -1,6 +1,3 @@
-trigger:
-- master
-
 jobs:
 - job: build
 
@@ -132,12 +129,24 @@ jobs:
         PYVERSION: 3.7.3
         PYARCH: 64
 
+      PY2716_32:
+        PYVERSION: 2.7.16
+        PYARCH: 32
+      PY2716_64:
+        PYVERSION: 2.7.16
+        PYARCH: 64
+
   pool:
     vmImage: 'vs2017-win2016'
 
   steps:
   - powershell: .\download.ps1
     displayName: 'Run the build'
+
+  - task: PublishPipelineArtifact@0
+    inputs:
+      targetPath: 'install.log'
+      artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
 
   - task: ArchiveFiles@2
     inputs:
@@ -150,13 +159,9 @@ jobs:
       targetPath: '$(Build.ArtifactStagingDirectory)/Python-$(PYVERSION)-$(PYARCH).zip'
       artifactName: '$(PYVERSION)-$(PYARCH)'
 
-  - task: PublishPipelineArtifact@0
-    inputs:
-      targetPath: 'install.log'
-      artifactName: '$(PYVERSION)-$(PYARCH)-install.log'
-
 - job: release
   dependsOn: build
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   pool:
     vmImage: 'vs2017-win2016'
   steps:
