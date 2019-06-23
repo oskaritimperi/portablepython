@@ -34,6 +34,6 @@ if ($env:PYVERSION -like "3.*") {
     # Remove all __pycache__ directories
     Get-ChildItem -Include __pycache__ -Recurse -Force | Remove-Item -Force -Recurse
 } else {
-    msiexec /qn /i $target /L*V $logfile TARGETDIR=$targetdir ADDLOCAL=DefaultFeature,TclTk,Documentation,Tools REMOVE=Extensions,Testsuite
+    Start-Process -FilePath msiexec -ArgumentList "/qn","/i","$target","/L*V","$logfile","TARGETDIR=$targetdir","ADDLOCAL=DefaultFeature,TclTk,Documentation,Tools","REMOVE=Extensions,Testsuite" -Wait
     Get-ChildItem -Include "*.pyc" -Recurse -Force | Remove-Item -Force
 }
