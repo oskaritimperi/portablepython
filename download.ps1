@@ -37,3 +37,5 @@ if ($env:PYVERSION -like "3.*") {
     Start-Process -FilePath msiexec -ArgumentList "/qn","/i","$target","/L*V","$logfile","TARGETDIR=$targetdir","ADDLOCAL=DefaultFeature,TclTk,Documentation,Tools","REMOVE=Extensions,Testsuite" -Wait
     Get-ChildItem -Include "*.pyc" -Recurse -Force | Remove-Item -Force
 }
+
+Remove-Item -Recurse -Force $targetdir\Scripts
