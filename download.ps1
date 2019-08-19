@@ -37,8 +37,11 @@ if ($env:PYVERSION -like "3.*") {
     Write-Output "Removing __pycache__ directories"
     Get-ChildItem -Include __pycache__ -Recurse -Force | Remove-Item -Force -Recurse
 } else {
+    Write-Output "Removing existing Python installation if there is one"
+    Start-Process -FilePath msiexec -ArgumentList "/qn","/x","$target" -Wait
+    
     Write-Output "Installing Python to $targetdir"
-    Start-Process -FilePath msiexec -ArgumentList "/qn","/fa","/i","$target","/L*V","$logfile","TARGETDIR=$targetdir","ADDLOCAL=DefaultFeature,TclTk,Documentation,Tools","REMOVE=Extensions,Testsuite" -Wait
+    Start-Process -FilePath msiexec -ArgumentList "/qn","/i","$target","/L*V","$logfile","TARGETDIR=$targetdir","ADDLOCAL=DefaultFeature,TclTk,Documentation,Tools","REMOVE=Extensions,Testsuite" -Wait
     
     Write-Output "Removing .pyc files"
     Get-ChildItem -Include "*.pyc" -Recurse -Force | Remove-Item -Force
