@@ -6,4 +6,6 @@
     <Option Name="Include_launcher" Value="0" />
     <Option Name="InstallLauncherAllUsers" Value="0" />
     <Option Name="Include_test" Value="0" />
+    <Option Name="Include_debug" Value="1" />
+    <Option Name="Include_symbols" Value="1" />
 </Options>
