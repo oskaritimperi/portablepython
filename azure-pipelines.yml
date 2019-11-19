@@ -129,6 +129,27 @@ jobs:
         PYVERSION: 3.7.3
         PYARCH: 64
 
+      PY374_32:
+        PYVERSION: 3.7.4
+        PYARCH: 32
+      PY374_64:
+        PYVERSION: 3.7.4
+        PYARCH: 64
+
+      PY375_32:
+        PYVERSION: 3.7.5
+        PYARCH: 32
+      PY375_64:
+        PYVERSION: 3.7.5
+        PYARCH: 64
+
+      PY380_32:
+        PYVERSION: 3.8.0
+        PYARCH: 32
+      PY380_64:
+        PYVERSION: 3.8.0
+        PYARCH: 64
+
       PY2716_32:
         PYVERSION: 2.7.16
         PYARCH: 32
